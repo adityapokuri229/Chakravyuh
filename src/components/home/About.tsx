@@ -32,7 +32,10 @@ export default function About() {
 
       <div className="max-w-7xl mx-auto relative z-10">
         <AnimatedSection>
-          <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-center text-white mb-2">
+          <h2 
+            className="font-samarkan text-4xl md:text-5xl lg:text-6xl text-center text-white mb-2 py-2 leading-snug tracking-wider"
+            style={{ fontStyle: 'normal', fontVariant: 'normal', fontWeight: 400 }}
+          >
             What is <span className="text-gradient">Chakravyuh</span>?
           </h2>
           <OrnateDivider />

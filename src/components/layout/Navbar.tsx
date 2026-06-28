@@ -11,8 +11,6 @@ const navLinks = [
   { href: '/#about', label: 'About' },
   { href: '/events', label: 'Events' },
   { href: '/schedule', label: 'Schedule' },
-  { href: '/#gallery', label: 'Gallery' },
-  { href: '/#sponsors', label: 'Sponsors' },
   { href: '/faq', label: 'FAQ' },
   { href: '/contact', label: 'Contact' },
 ];
@@ -60,7 +58,7 @@ export default function Navbar() {
                   <img
                     src="/logo.png"
                     alt="Chakravyuh"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover relative -top-[2px] scale-105"
                   />
                 </div>
               </div>

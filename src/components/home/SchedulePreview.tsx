@@ -31,29 +31,28 @@ export default function SchedulePreview() {
           <OrnateDivider className="!my-6" />
         </AnimatedSection>
 
-        <AnimatedSection>
           <div className="space-y-4">
             {scheduleData.slice(0, 6).map((item, i) => (
-              <div
-                key={i}
-                className="tamrapatra-card rounded-xl p-5 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 border border-secondary/20 hover:border-secondary/50"
-              >
-                <GoldCorner className="w-4 h-4" />
-                <div className="flex items-center gap-2 text-secondary font-heading-alt text-sm min-w-[170px] select-none">
-                  <Calendar size={14} className="text-secondary" />
-                  <span className="font-semibold">{item.time}</span>
+              <AnimatedSection key={i} delay={i * 0.1}>
+                <div
+                  className="tamrapatra-card rounded-xl p-5 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 border border-secondary/20 hover:border-secondary/50"
+                >
+                  <GoldCorner className="w-4 h-4" />
+                  <div className="flex items-center gap-2 text-secondary font-heading-alt text-sm min-w-[170px] select-none">
+                    <Calendar size={14} className="text-secondary" />
+                    <span className="font-semibold">{item.time}</span>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h4 className="text-white font-heading text-base tracking-wide">{item.activity}</h4>
+                    <p className="text-white/60 text-xs font-body-alt mt-1 leading-relaxed">{item.description}</p>
+                  </div>
+                  <div className="text-secondary/70 text-xs font-heading-alt border border-secondary/25 px-3 py-1 rounded bg-background/50 self-start sm:self-center">
+                    {item.venue}
+                  </div>
                 </div>
-                <div className="flex-1 min-w-0">
-                  <h4 className="text-white font-heading text-base tracking-wide">{item.activity}</h4>
-                  <p className="text-white/60 text-xs font-body-alt mt-1 leading-relaxed">{item.description}</p>
-                </div>
-                <div className="text-secondary/70 text-xs font-heading-alt border border-secondary/25 px-3 py-1 rounded bg-background/50 self-start sm:self-center">
-                  {item.venue}
-                </div>
-              </div>
+              </AnimatedSection>
             ))}
           </div>
-        </AnimatedSection>
       </div>
     </section>
   );

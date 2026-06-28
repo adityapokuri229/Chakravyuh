@@ -4,8 +4,6 @@ import ThemeSection from '@/components/home/ThemeSection';
 import EventsOverview from '@/components/home/EventsOverview';
 import Timeline from '@/components/home/Timeline';
 import SchedulePreview from '@/components/home/SchedulePreview';
-import Gallery from '@/components/home/Gallery';
-import Sponsors from '@/components/home/Sponsors';
 import ContactSection from '@/components/home/ContactSection';
 
 export default function Home() {
@@ -17,8 +15,6 @@ export default function Home() {
       <EventsOverview />
       <Timeline />
       <SchedulePreview />
-      <Gallery />
-      <Sponsors />
       <ContactSection />
     </>
   );

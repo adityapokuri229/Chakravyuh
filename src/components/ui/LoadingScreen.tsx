@@ -38,7 +38,8 @@ export default function LoadingScreen() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-              className="text-5xl md:text-7xl font-heading text-gradient tracking-wider"
+              className="text-5xl md:text-7xl font-samarkan py-2 leading-tight text-gradient tracking-wider"
+              style={{ fontStyle: 'normal', fontVariant: 'normal', fontWeight: 400 }}
             >
               Chakravyuh
             </motion.h1>
