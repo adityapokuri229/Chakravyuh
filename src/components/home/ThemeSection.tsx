@@ -62,7 +62,7 @@ function PoemLine({ index, text }: { index: number; text: string }) {
       initial={{ opacity: 0, y: 20 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.9, delay: index * 0.1 }}
-      className="font-heading-alt text-lg md:text-2xl lg:text-3xl text-gradient-copper leading-relaxed tracking-wider italic font-semibold select-none"
+      className="font-heading text-lg md:text-2xl lg:text-3xl text-gradient leading-relaxed tracking-wider italic font-medium select-none"
     >
       {text}
     </motion.div>

@@ -29,64 +29,57 @@ export default function EventsPage() {
           <div className="space-y-16 md:space-y-24 mt-12">
             {events.map((event, i) => {
               const Icon = icons[event.icon] || Trophy;
-              const isReversed = i % 2 === 1;
 
               return (
                 <AnimatedSection key={event.id} delay={0.1}>
-                  <div className={`grid md:grid-cols-2 gap-8 md:gap-14 items-center ${isReversed ? 'md:flex-row-reverse' : ''}`}>
-                    {/* Poster box with gold corner framework */}
-                    <div className={`order-1 ${isReversed ? 'md:order-2' : 'md:order-1'}`}>
-                      <div className="tamrapatra-card aspect-[4/3] rounded-2xl border border-secondary/20 flex items-center justify-center group overflow-hidden">
-                        <GoldCorner />
-                        <div className="text-center p-8 z-10">
-                          <Icon className="w-16 h-16 text-secondary/40 group-hover:text-secondary transition-colors mx-auto mb-4" />
-                          <p className="text-white/40 text-xs font-heading-alt uppercase tracking-wider">Labyrinth Poster Key</p>
+                  <div className="tamrapatra-card rounded-2xl border border-secondary/20 p-8 md:p-12 relative overflow-hidden group">
+                    <GoldCorner />
+                    <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 to-transparent pointer-events-none" />
+                    <div className="relative z-10 flex flex-col md:flex-row gap-8 items-start md:items-center">
+                      
+                      <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-b from-secondary/30 to-primary/30 border border-secondary/40 flex items-center justify-center shadow-lg shadow-primary/20 shrink-0">
+                        <Icon className="w-8 h-8 md:w-10 md:h-10 text-secondary" />
+                      </div>
+                      
+                      <div className="flex-1">
+                        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
+                          <div>
+                            <h2 className="font-heading text-2xl md:text-3xl text-white group-hover:text-secondary transition-colors duration-300">{event.name}</h2>
+                            <p className="text-secondary font-heading-alt text-sm font-semibold tracking-wider">{event.sanskritName}</p>
+                          </div>
+                          <p className="text-accent text-xs md:text-sm font-heading-alt uppercase tracking-widest font-semibold bg-primary/10 px-4 py-2 border border-secondary/20 rounded-full inline-block">
+                            {event.tagline}
+                          </p>
                         </div>
-                        {/* Faded mandala motif */}
-                        <div className="absolute inset-0 opacity-[0.03] flex items-center justify-center pointer-events-none">
-                          <svg className="w-48 h-48 text-secondary" viewBox="0 0 100 100" fill="currentColor">
-                            <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" strokeWidth="1" />
-                          </svg>
+
+                        <p className="text-white/70 text-sm md:text-base font-body-alt leading-relaxed mb-6 max-w-3xl">
+                          {event.description}
+                        </p>
+
+                        <div className="flex flex-wrap items-center justify-between gap-6">
+                          <div className="flex flex-wrap gap-4">
+                            <div className="flex items-center gap-2 text-white/80 text-xs font-heading-alt font-semibold uppercase tracking-wider select-none">
+                              <Users size={16} className="text-secondary" />
+                              <span>{event.teamSize}</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-white/80 text-xs font-heading-alt font-semibold uppercase tracking-wider select-none">
+                              <Clock size={16} className="text-secondary" />
+                              <span>{event.timeSlot}</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-white/80 text-xs font-heading-alt font-semibold uppercase tracking-wider select-none">
+                              <MapPin size={16} className="text-secondary" />
+                              <span>{event.venue}</span>
+                            </div>
+                          </div>
+
+                          <Link
+                            href={`/events/${event.slug}`}
+                            className="inline-flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-primary to-primary/80 border border-secondary text-secondary font-bold rounded-lg hover:from-secondary hover:to-secondary hover:text-background transition-all duration-300 text-xs uppercase tracking-widest"
+                          >
+                            Enter Arena Details
+                          </Link>
                         </div>
                       </div>
-                    </div>
-
-                    {/* Text box */}
-                    <div className={`order-2 ${isReversed ? 'md:order-1' : 'md:order-2'}`}>
-                      <div className="flex items-center gap-4 mb-4">
-                        <div className="w-14 h-14 rounded-full bg-gradient-to-b from-secondary/30 to-primary/30 border border-secondary/40 flex items-center justify-center shadow-lg shadow-primary/20 shrink-0">
-                          <Icon className="w-6 h-6 text-secondary" />
-                        </div>
-                        <div>
-                          <h2 className="font-heading text-2xl md:text-3xl text-white">{event.name}</h2>
-                          <p className="text-secondary font-heading-alt text-sm font-semibold tracking-wider">{event.sanskritName}</p>
-                        </div>
-                      </div>
-
-                      <p className="text-accent text-sm md:text-base font-heading-alt uppercase tracking-widest font-semibold mb-3">{event.tagline}</p>
-                      <p className="text-white/70 text-sm font-body-alt leading-relaxed mb-6">{event.description}</p>
-
-                      <div className="flex flex-wrap gap-4 mb-8">
-                        <div className="flex items-center gap-2 border border-secondary/20 bg-primary/10 px-3 py-1.5 rounded-lg text-white/80 text-xs font-heading-alt font-semibold uppercase tracking-wider select-none">
-                          <Users size={14} className="text-secondary" />
-                          <span>{event.teamSize}</span>
-                        </div>
-                        <div className="flex items-center gap-2 border border-secondary/20 bg-primary/10 px-3 py-1.5 rounded-lg text-white/80 text-xs font-heading-alt font-semibold uppercase tracking-wider select-none">
-                          <Clock size={14} className="text-secondary" />
-                          <span>{event.timeSlot}</span>
-                        </div>
-                        <div className="flex items-center gap-2 border border-secondary/20 bg-primary/10 px-3 py-1.5 rounded-lg text-white/80 text-xs font-heading-alt font-semibold uppercase tracking-wider select-none">
-                          <MapPin size={14} className="text-secondary" />
-                          <span>{event.venue}</span>
-                        </div>
-                      </div>
-
-                      <Link
-                        href={`/events/${event.slug}`}
-                        className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-primary to-primary/80 border border-secondary text-secondary font-bold rounded-lg hover:from-secondary hover:to-secondary hover:text-background transition-all duration-300 text-xs uppercase tracking-widest"
-                      >
-                        Enter Arena Details
-                      </Link>
                     </div>
                   </div>
                 </AnimatedSection>

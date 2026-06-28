@@ -10,9 +10,7 @@ const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/#about', label: 'About' },
   { href: '/events', label: 'Events' },
-  { href: '/schedule', label: 'Schedule' },
   { href: '/faq', label: 'FAQ' },
-  { href: '/contact', label: 'Contact' },
 ];
 
 export default function Navbar() {
@@ -119,7 +117,7 @@ export default function Navbar() {
                 </Link>
               ))}
               <a
-                href="https://docs.google.com/forms/d/1TPUvIxxkDbZULHmbX9g72leO92AL6Ti-s4Sx0aVBfWE/"
+                href="https://forms.gle/dzUscRHoR6fqNJrw6"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="ml-4 px-5 py-2.5 bg-secondary text-background text-sm font-semibold rounded-lg hover:bg-secondary/90 transition-all duration-300 shadow-lg shadow-secondary/20"
@@ -164,7 +162,7 @@ export default function Navbar() {
                   </Link>
                 ))}
                 <a
-                  href="https://docs.google.com/forms/d/1TPUvIxxkDbZULHmbX9g72leO92AL6Ti-s4Sx0aVBfWE/"
+                  href="https://forms.gle/dzUscRHoR6fqNJrw6"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block px-4 py-3 bg-secondary text-background font-semibold text-center text-sm rounded-lg mt-4"
