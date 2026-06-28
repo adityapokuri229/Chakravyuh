@@ -1,26 +1,261 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@font-face {
+  font-family: 'Samarkan';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/samarkan.ttf') format('truetype');
+  font-display: swap;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* ── Color System: Warm Crimson & Ochre ── */
+  --color-bg-deep: #120708;
+  --color-bg-surface: #1D1112;
+  --color-bg-elevated: #2A1819;
+  --color-background: #120708;
+
+  --color-gold: #DA7A05;
+  --color-gold-light: #F59E0B;
+  --color-gold-pale: #FBBF24;
+  --color-gold-dim: #92400E;
+
+  --color-primary: #6F0E12;
+  --color-secondary: #DA7A05;
+  --color-accent: #DA7A05;
+
+  --color-crimson: #6F0E12;
+  --color-saffron: #DA7A05;
+
+  --color-text: #FDF2E9;
+  --color-text-muted: rgba(253, 242, 233, 0.6);
+  --color-text-dim: rgba(253, 242, 233, 0.35);
+
+  --color-border: rgba(218, 122, 5, 0.2);
+  --color-border-bright: rgba(218, 122, 5, 0.5);
+  --color-glow: rgba(218, 122, 5, 0.3);
+
+  --color-cards: #1D1112;
+
+  /* ── Typography ── */
+  --font-heading: var(--font-playfair), 'Playfair Display', serif;
+  --font-heading-alt: var(--font-rozha), 'Rozha One', serif;
+  --font-body: var(--font-crimson-pro), 'Crimson Pro', serif;
+  --font-samarkan: 'Samarkan', sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ── Base Layer ── */
+@layer base {
+  * {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-bg-deep);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    /* Brocade-style subtle background texture: interlocking diamonds */
+    background-image:
+      radial-gradient(circle at 15% 25%, rgba(111, 14, 18, 0.12) 0%, transparent 50%),
+      radial-gradient(circle at 85% 75%, rgba(218, 122, 5, 0.06) 0%, transparent 50%),
+      linear-gradient(45deg, rgba(218, 122, 5, 0.03) 25%, transparent 25%),
+      linear-gradient(-45deg, rgba(218, 122, 5, 0.03) 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, rgba(218, 122, 5, 0.03) 75%),
+      linear-gradient(-45deg, transparent 75%, rgba(218, 122, 5, 0.03) 75%);
+    background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px, 40px 40px, 40px 40px;
+    background-position: 0 0, 0 0, 0 0, 0 20px, 20px -20px, 20px 0;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #120708;
+    border-left: 1px solid rgba(218, 122, 5, 0.08);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #DA7A05 0%, #92400E 100%);
+    border: 2px solid #120708;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #F59E0B;
+    color: #120708;
+  }
+
+  ::selection {
+    background: #DA7A05;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ── Utility Layer ── */
+@layer utilities {
+
+  /* ── Gold Text Gradients ── */
+  .text-gradient {
+    background: linear-gradient(135deg, #FBBF24 0%, #F59E0B 35%, #DA7A05 65%, #92400E 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-warm {
+    background: linear-gradient(135deg, #F59E0B 0%, #DA7A05 50%, #6F0E12 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* ── Glass / Surface Utilities ── */
+  .glass {
+    background: rgba(18, 24, 43, 0.8);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(201, 168, 76, 0.15);
+  }
+
+  .glass-light {
+    background: rgba(245, 237, 212, 0.03);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(201, 168, 76, 0.08);
+  }
+
+  /* ── Glow Effects ── */
+  .glow {
+    box-shadow: 0 0 20px rgba(201, 168, 76, 0.25), 0 0 40px rgba(10, 14, 26, 0.8);
+  }
+
+  .glow-sm {
+    box-shadow: 0 0 10px rgba(201, 168, 76, 0.2);
+  }
+
+  .text-shadow-gold {
+    text-shadow: 0 0 20px rgba(201, 168, 76, 0.3), 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  /* ── Haveli Card — the primary card style ── */
+  .haveli-card {
+    background: linear-gradient(145deg, #151C32 0%, #0E1325 100%);
+    border: 1px solid rgba(201, 168, 76, 0.15);
+    box-shadow:
+      inset 0 1px 0 rgba(218, 122, 5, 0.06),
+      0 8px 32px rgba(0, 0, 0, 0.4),
+      0 0 1px rgba(218, 122, 5, 0.1);
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border-radius: 4px;
+  }
+
+  .haveli-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(201, 168, 76, 0.4);
+    box-shadow:
+      inset 0 0 0 1px rgba(201, 168, 76, 0.12),
+      0 16px 48px rgba(0, 0, 0, 0.5),
+      0 0 12px rgba(201, 168, 76, 0.12);
+  }
+
+  /* Gold top border variant */
+  .haveli-card-topped {
+    border-top: 3px solid #C9A84C;
+  }
+
+  /* ── Buttons ── */
+  .btn-gold {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 2rem;
+    background: #C9A84C;
+    color: #0A0E1A;
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    border-radius: 4px;
+    border: 1px solid #C9A84C;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  .btn-gold:hover {
+    background: #E8C547;
+    border-color: #E8C547;
+    box-shadow: 0 4px 16px rgba(201, 168, 76, 0.3);
+  }
+
+  .btn-gold-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 2rem;
+    background: transparent;
+    color: #C9A84C;
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    border-radius: 4px;
+    border: 1px solid rgba(201, 168, 76, 0.4);
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  .btn-gold-outline:hover {
+    background: rgba(201, 168, 76, 0.1);
+    border-color: #C9A84C;
+    color: #E8C547;
+  }
+
+  /* ── Section Spacing: Palace Chambers ── */
+  .section-padding {
+    padding: 5rem 1.5rem;
+  }
+  @media (min-width: 768px) {
+    .section-padding {
+      padding: 7rem 2rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    .section-padding {
+      padding: 9rem 4rem;
+    }
+  }
+
+  /* ── Masonry Grid ── */
+  .masonry-grid {
+    columns: 1;
+    column-gap: 1.5rem;
+  }
+  @media (min-width: 640px) {
+    .masonry-grid { columns: 2; }
+  }
+  @media (min-width: 1024px) {
+    .masonry-grid { columns: 3; }
+  }
+  .masonry-item {
+    break-inside: avoid;
+    margin-bottom: 1.5rem;
+  }
+
+  /* ── Form input base ── */
+  .input-haveli {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: rgba(10, 14, 26, 0.6);
+    border: 1px solid rgba(201, 168, 76, 0.15);
+    border-radius: 4px;
+    color: #F5EDD4;
+    font-size: 0.875rem;
+    font-family: var(--font-body);
+    transition: all 0.3s ease;
+  }
+  .input-haveli::placeholder {
+    color: rgba(245, 237, 212, 0.25);
+  }
+  .input-haveli:focus {
+    outline: none;
+    border-color: #C9A84C;
+    box-shadow: 0 0 0 2px rgba(201, 168, 76, 0.15);
+  }
 }
