@@ -21,7 +21,7 @@ export default function LoadingScreen() {
           transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
         >
           {/* Ambient glow */}
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(201,168,76,0.08)_0%,_transparent_60%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(218,122,5,0.08)_0%,_transparent_60%)]" />
 
           {/* Rotating mandala behind text */}
           <motion.div

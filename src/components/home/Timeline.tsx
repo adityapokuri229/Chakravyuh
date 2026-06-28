@@ -21,11 +21,7 @@ export default function Timeline() {
           </p>
           <OrnateDivider />
         </AnimatedSection>
-
         <div className="relative mt-12">
-          {/* Golden Gradient Timeline Path */}
-          <div className="absolute left-[18px] md:left-1/2 md:-translate-x-px top-0 bottom-0 w-[2px] bg-gradient-to-b from-secondary/80 via-primary/50 to-secondary/80" />
-
           <div className="space-y-0">
             {timeline.map((item, i) => (
               <TimelineItem key={i} item={item} index={i} />

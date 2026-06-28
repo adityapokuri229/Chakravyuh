@@ -18,10 +18,10 @@ export default function OrnateDivider({ className = '' }: { className?: string }
         xmlns="http://www.w3.org/2000/svg"
       >
         {/* Outer circle */}
-        <circle cx="50" cy="50" r="38" stroke="#C9A84C" strokeWidth="0.8" opacity={0.5} />
+        <circle cx="50" cy="50" r="38" stroke="#DA7A05" strokeWidth="0.8" opacity={0.5} />
         
         {/* Dashed middle circle */}
-        <circle cx="50" cy="50" r="28" stroke="#C9A84C" strokeWidth="0.5" strokeDasharray="3 2" opacity={0.4} />
+        <circle cx="50" cy="50" r="28" stroke="#DA7A05" strokeWidth="0.5" strokeDasharray="3 2" opacity={0.4} />
 
         {/* 8-point star */}
         <polygon
@@ -32,7 +32,7 @@ export default function OrnateDivider({ className = '' }: { className?: string }
             const y = 50 + r * Math.sin((angle * Math.PI) / 180);
             return `${x},${y}`;
           }).join(' ')}
-          stroke="#C9A84C"
+          stroke="#DA7A05"
           strokeWidth="0.6"
           opacity={0.6}
         />
@@ -45,7 +45,7 @@ export default function OrnateDivider({ className = '' }: { className?: string }
             cy={50 - 18}
             rx={3.5}
             ry={8}
-            stroke="#C9A84C"
+            stroke="#DA7A05"
             strokeWidth="0.5"
             opacity={0.35}
             transform={`rotate(${i * 45} 50 50)`}
@@ -53,10 +53,10 @@ export default function OrnateDivider({ className = '' }: { className?: string }
         ))}
 
         {/* Inner circle */}
-        <circle cx="50" cy="50" r="6" stroke="#C9A84C" strokeWidth="0.7" opacity={0.6} />
+        <circle cx="50" cy="50" r="6" stroke="#DA7A05" strokeWidth="0.7" opacity={0.6} />
         
         {/* Center dot */}
-        <circle cx="50" cy="50" r="2.5" fill="#C9A84C" fillOpacity={0.4} />
+        <circle cx="50" cy="50" r="2.5" fill="#DA7A05" fillOpacity={0.4} />
 
         {/* Outer dots */}
         {Array.from({ length: 8 }, (_, i) => {
@@ -67,7 +67,7 @@ export default function OrnateDivider({ className = '' }: { className?: string }
               cx={50 + 34 * Math.cos(angle)}
               cy={50 + 34 * Math.sin(angle)}
               r={1.5}
-              fill="#C9A84C"
+              fill="#DA7A05"
               fillOpacity={0.5}
             />
           );

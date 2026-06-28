@@ -27,8 +27,8 @@ export default function MandalaMotif({
       xmlns="http://www.w3.org/2000/svg"
     >
       {/* Outer ring */}
-      <circle cx={cx} cy={cy} r={46} stroke="#C9A84C" strokeWidth="0.4" />
-      <circle cx={cx} cy={cy} r={44} stroke="#C9A84C" strokeWidth="0.2" strokeDasharray="2 2" />
+      <circle cx={cx} cy={cy} r={46} stroke="#DA7A05" strokeWidth="0.4" />
+      <circle cx={cx} cy={cy} r={44} stroke="#DA7A05" strokeWidth="0.2" strokeDasharray="2 2" />
 
       {/* 16-point star polygon — outer */}
       <polygon
@@ -39,13 +39,13 @@ export default function MandalaMotif({
           const y = cy + r * Math.sin((angle * Math.PI) / 180);
           return `${x},${y}`;
         }).join(' ')}
-        stroke="#C9A84C"
+        stroke="#DA7A05"
         strokeWidth="0.3"
       />
 
       {/* Middle concentric rings */}
-      <circle cx={cx} cy={cy} r={30} stroke="#C9A84C" strokeWidth="0.5" />
-      <circle cx={cx} cy={cy} r={28} stroke="#C9A84C" strokeWidth="0.2" strokeDasharray="1.5 1" />
+      <circle cx={cx} cy={cy} r={30} stroke="#DA7A05" strokeWidth="0.5" />
+      <circle cx={cx} cy={cy} r={28} stroke="#DA7A05" strokeWidth="0.2" strokeDasharray="1.5 1" />
 
       {/* 12-point star polygon — middle */}
       <polygon
@@ -56,7 +56,7 @@ export default function MandalaMotif({
           const y = cy + r * Math.sin((angle * Math.PI) / 180);
           return `${x},${y}`;
         }).join(' ')}
-        stroke="#C9A84C"
+        stroke="#DA7A05"
         strokeWidth="0.3"
       />
 
@@ -70,7 +70,7 @@ export default function MandalaMotif({
             cy={cy - 15}
             rx={3}
             ry={8}
-            stroke="#C9A84C"
+            stroke="#DA7A05"
             strokeWidth="0.35"
             transform={`rotate(${angle} ${cx} ${cy})`}
           />
@@ -86,13 +86,13 @@ export default function MandalaMotif({
           const y = cy + r * Math.sin((angle * Math.PI) / 180);
           return `${x},${y}`;
         }).join(' ')}
-        stroke="#C9A84C"
+        stroke="#DA7A05"
         strokeWidth="0.3"
       />
 
       {/* Center circle */}
-      <circle cx={cx} cy={cy} r={4} stroke="#C9A84C" strokeWidth="0.5" />
-      <circle cx={cx} cy={cy} r={2} fill="#C9A84C" fillOpacity={0.3} />
+      <circle cx={cx} cy={cy} r={4} stroke="#DA7A05" strokeWidth="0.5" />
+      <circle cx={cx} cy={cy} r={2} fill="#DA7A05" fillOpacity={0.3} />
 
       {/* Radial lines from center to outer ring */}
       {Array.from({ length: 24 }, (_, i) => {
@@ -108,7 +108,7 @@ export default function MandalaMotif({
             y1={y1}
             x2={x2}
             y2={y2}
-            stroke="#C9A84C"
+            stroke="#DA7A05"
             strokeWidth="0.12"
             strokeDasharray={i % 3 === 0 ? 'none' : '1 2'}
           />
@@ -120,7 +120,7 @@ export default function MandalaMotif({
         const angle = (i * 360) / 16;
         const x = cx + 44 * Math.cos((angle * Math.PI) / 180);
         const y = cy + 44 * Math.sin((angle * Math.PI) / 180);
-        return <circle key={`dot-${i}`} cx={x} cy={y} r={0.8} fill="#C9A84C" />;
+        return <circle key={`dot-${i}`} cx={x} cy={y} r={0.8} fill="#DA7A05" />;
       })}
     </svg>
   );

@@ -26,30 +26,30 @@ export default function SectionSeparator({ className = '' }: { className?: strin
             {/* Central diamond */}
             <polygon
               points={`${cx},${cy - 6} ${cx + 6},${cy} ${cx},${cy + 6} ${cx - 6},${cy}`}
-              stroke="#C9A84C"
+              stroke="#DA7A05"
               strokeWidth="0.6"
               fill="none"
             />
             {/* Inner diamond */}
             <polygon
               points={`${cx},${cy - 3} ${cx + 3},${cy} ${cx},${cy + 3} ${cx - 3},${cy}`}
-              stroke="#C9A84C"
+              stroke="#DA7A05"
               strokeWidth="0.4"
               fill="none"
             />
             {/* Center dot */}
-            <circle cx={cx} cy={cy} r={1} fill="#C9A84C" fillOpacity={0.5} />
+            <circle cx={cx} cy={cy} r={1} fill="#DA7A05" fillOpacity={0.5} />
             {/* Connecting horizontal lines */}
-            <line x1={cx + 6} y1={cy} x2={patternWidth} y2={cy} stroke="#C9A84C" strokeWidth="0.4" />
-            <line x1={0} y1={cy} x2={cx - 6} y2={cy} stroke="#C9A84C" strokeWidth="0.4" />
+            <line x1={cx + 6} y1={cy} x2={patternWidth} y2={cy} stroke="#DA7A05" strokeWidth="0.4" />
+            <line x1={0} y1={cy} x2={cx - 6} y2={cy} stroke="#DA7A05" strokeWidth="0.4" />
             {/* Small chevron marks at edges */}
-            <line x1={cx + 10} y1={cy - 2} x2={cx + 13} y2={cy} stroke="#C9A84C" strokeWidth="0.3" />
-            <line x1={cx + 10} y1={cy + 2} x2={cx + 13} y2={cy} stroke="#C9A84C" strokeWidth="0.3" />
-            <line x1={cx - 10} y1={cy - 2} x2={cx - 13} y2={cy} stroke="#C9A84C" strokeWidth="0.3" />
-            <line x1={cx - 10} y1={cy + 2} x2={cx - 13} y2={cy} stroke="#C9A84C" strokeWidth="0.3" />
+            <line x1={cx + 10} y1={cy - 2} x2={cx + 13} y2={cy} stroke="#DA7A05" strokeWidth="0.3" />
+            <line x1={cx + 10} y1={cy + 2} x2={cx + 13} y2={cy} stroke="#DA7A05" strokeWidth="0.3" />
+            <line x1={cx - 10} y1={cy - 2} x2={cx - 13} y2={cy} stroke="#DA7A05" strokeWidth="0.3" />
+            <line x1={cx - 10} y1={cy + 2} x2={cx - 13} y2={cy} stroke="#DA7A05" strokeWidth="0.3" />
             {/* Top and bottom border lines */}
-            <line x1={0} y1={2} x2={patternWidth} y2={2} stroke="#C9A84C" strokeWidth="0.2" />
-            <line x1={0} y1={h - 2} x2={patternWidth} y2={h - 2} stroke="#C9A84C" strokeWidth="0.2" />
+            <line x1={0} y1={2} x2={patternWidth} y2={2} stroke="#DA7A05" strokeWidth="0.2" />
+            <line x1={0} y1={h - 2} x2={patternWidth} y2={h - 2} stroke="#DA7A05" strokeWidth="0.2" />
           </pattern>
         </defs>
         <rect width="100%" height="100%" fill="url(#frieze-pattern)" />

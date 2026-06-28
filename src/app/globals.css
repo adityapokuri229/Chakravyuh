@@ -111,32 +111,32 @@
   .glass {
     background: rgba(18, 24, 43, 0.8);
     backdrop-filter: blur(16px);
-    border: 1px solid rgba(201, 168, 76, 0.15);
+    border: 1px solid rgba(218, 122, 5, 0.15);
   }
 
   .glass-light {
-    background: rgba(245, 237, 212, 0.03);
+    background: rgba(253, 242, 233, 0.03);
     backdrop-filter: blur(8px);
-    border: 1px solid rgba(201, 168, 76, 0.08);
+    border: 1px solid rgba(218, 122, 5, 0.08);
   }
 
   /* ── Glow Effects ── */
   .glow {
-    box-shadow: 0 0 20px rgba(201, 168, 76, 0.25), 0 0 40px rgba(10, 14, 26, 0.8);
+    box-shadow: 0 0 20px rgba(218, 122, 5, 0.25), 0 0 40px rgba(18, 7, 8, 0.8);
   }
 
   .glow-sm {
-    box-shadow: 0 0 10px rgba(201, 168, 76, 0.2);
+    box-shadow: 0 0 10px rgba(218, 122, 5, 0.2);
   }
 
   .text-shadow-gold {
-    text-shadow: 0 0 20px rgba(201, 168, 76, 0.3), 0 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 0 20px rgba(218, 122, 5, 0.3), 0 2px 4px rgba(0, 0, 0, 0.5);
   }
 
   /* ── Haveli Card — the primary card style ── */
   .haveli-card {
     background: linear-gradient(145deg, #151C32 0%, #0E1325 100%);
-    border: 1px solid rgba(201, 168, 76, 0.15);
+    border: 1px solid rgba(218, 122, 5, 0.15);
     box-shadow:
       inset 0 1px 0 rgba(218, 122, 5, 0.06),
       0 8px 32px rgba(0, 0, 0, 0.4),
@@ -148,16 +148,16 @@
 
   .haveli-card:hover {
     transform: translateY(-4px);
-    border-color: rgba(201, 168, 76, 0.4);
+    border-color: rgba(218, 122, 5, 0.4);
     box-shadow:
-      inset 0 0 0 1px rgba(201, 168, 76, 0.12),
+      inset 0 0 0 1px rgba(218, 122, 5, 0.12),
       0 16px 48px rgba(0, 0, 0, 0.5),
-      0 0 12px rgba(201, 168, 76, 0.12);
+      0 0 12px rgba(218, 122, 5, 0.12);
   }
 
   /* Gold top border variant */
   .haveli-card-topped {
-    border-top: 3px solid #C9A84C;
+    border-top: 3px solid #DA7A05;
   }
 
   /* ── Buttons ── */
@@ -167,21 +167,21 @@
     justify-content: center;
     gap: 0.5rem;
     padding: 0.75rem 2rem;
-    background: #C9A84C;
-    color: #0A0E1A;
+    background: #DA7A05;
+    color: #120708;
     font-weight: 700;
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.15em;
     border-radius: 4px;
-    border: 1px solid #C9A84C;
+    border: 1px solid #DA7A05;
     transition: all 0.3s ease;
     cursor: pointer;
   }
   .btn-gold:hover {
-    background: #E8C547;
-    border-color: #E8C547;
-    box-shadow: 0 4px 16px rgba(201, 168, 76, 0.3);
+    background: #F59E0B;
+    border-color: #F59E0B;
+    box-shadow: 0 4px 16px rgba(218, 122, 5, 0.3);
   }
 
   .btn-gold-outline {
@@ -191,20 +191,20 @@
     gap: 0.5rem;
     padding: 0.75rem 2rem;
     background: transparent;
-    color: #C9A84C;
+    color: #DA7A05;
     font-weight: 700;
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.15em;
     border-radius: 4px;
-    border: 1px solid rgba(201, 168, 76, 0.4);
+    border: 1px solid rgba(218, 122, 5, 0.4);
     transition: all 0.3s ease;
     cursor: pointer;
   }
   .btn-gold-outline:hover {
-    background: rgba(201, 168, 76, 0.1);
-    border-color: #C9A84C;
-    color: #E8C547;
+    background: rgba(218, 122, 5, 0.1);
+    border-color: #DA7A05;
+    color: #F59E0B;
   }
 
   /* ── Section Spacing: Palace Chambers ── */
@@ -242,20 +242,20 @@
   .input-haveli {
     width: 100%;
     padding: 0.75rem 1rem;
-    background: rgba(10, 14, 26, 0.6);
-    border: 1px solid rgba(201, 168, 76, 0.15);
+    background: rgba(18, 7, 8, 0.6);
+    border: 1px solid rgba(218, 122, 5, 0.15);
     border-radius: 4px;
-    color: #F5EDD4;
+    color: #FDF2E9;
     font-size: 0.875rem;
     font-family: var(--font-body);
     transition: all 0.3s ease;
   }
   .input-haveli::placeholder {
-    color: rgba(245, 237, 212, 0.25);
+    color: rgba(253, 242, 233, 0.25);
   }
   .input-haveli:focus {
     outline: none;
-    border-color: #C9A84C;
-    box-shadow: 0 0 0 2px rgba(201, 168, 76, 0.15);
+    border-color: #DA7A05;
+    box-shadow: 0 0 0 2px rgba(218, 122, 5, 0.15);
   }
 }

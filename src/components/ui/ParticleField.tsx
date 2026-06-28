@@ -17,8 +17,8 @@ interface Particle {
   waveOffset: number;
 }
 
-const GOLD_TONES = ['#C9A84C', '#E8C547', '#F5D87A', '#D4600A'];
-const EMBER_COLOR = '#C9A84C';
+const GOLD_TONES = ['#DA7A05', '#F59E0B', '#FBBF24', '#D4600A'];
+const EMBER_COLOR = '#DA7A05';
 
 export default function ParticleField() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -105,7 +105,7 @@ export default function ParticleField() {
           ctx.beginPath();
           ctx.moveTo(-p.size, 0);
           ctx.lineTo(p.size * 0.6, 0);
-          ctx.strokeStyle = 'rgba(245, 237, 212, 0.2)';
+          ctx.strokeStyle = 'rgba(253, 242, 233, 0.2)';
           ctx.lineWidth = 0.4;
           ctx.stroke();
           ctx.restore();
@@ -120,12 +120,12 @@ export default function ParticleField() {
           ctx.save();
           ctx.globalAlpha = p.opacity;
           ctx.shadowBlur = 8;
-          ctx.shadowColor = '#C9A84C';
+          ctx.shadowColor = '#DA7A05';
 
           const gradient = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.size * 4);
-          gradient.addColorStop(0, 'rgba(245, 216, 122, 1)');
-          gradient.addColorStop(0.3, 'rgba(201, 168, 76, 0.5)');
-          gradient.addColorStop(1, 'rgba(10, 14, 26, 0)');
+          gradient.addColorStop(0, 'rgba(251, 191, 36, 1)');
+          gradient.addColorStop(0.3, 'rgba(218, 122, 5, 0.5)');
+          gradient.addColorStop(1, 'rgba(18, 7, 8, 0)');
 
           ctx.beginPath();
           ctx.arc(p.x, p.y, p.size * 4, 0, Math.PI * 2);
@@ -134,7 +134,7 @@ export default function ParticleField() {
 
           ctx.beginPath();
           ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-          ctx.fillStyle = '#F5EDD4';
+          ctx.fillStyle = '#FDF2E9';
           ctx.fill();
           ctx.restore();
 

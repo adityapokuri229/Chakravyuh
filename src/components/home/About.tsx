@@ -83,17 +83,17 @@ export default function About() {
                 ))}
 
                 {/* Inner Arch Window logo container */}
-                <div className="absolute w-44 h-44 rounded-full bg-cards border-2 border-secondary/35 flex items-center justify-center shadow-2xl shadow-primary/50 overflow-hidden">
-                  <div className="absolute inset-2 border border-dashed border-secondary/15 rounded-full" />
+                <div className="absolute w-44 h-44 rounded-full bg-cards border-2 border-secondary/35 shadow-2xl shadow-primary/50 flex items-center justify-center">
+                  <div className="absolute inset-3 border border-dashed border-secondary/15 rounded-full pointer-events-none" />
                   <motion.div
                     animate={{ scale: [1, 1.05, 1] }}
                     transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-                    className="z-10 flex items-center justify-center w-full h-full p-2"
+                    className="z-10 w-[75%] h-[75%] rounded-full overflow-hidden relative"
                   >
                     <img
                       src="/logo.png"
                       alt="Chakravyuh"
-                      className="w-full h-full object-cover rounded-full"
+                      className="w-full h-full object-cover relative -top-[4px] scale-105"
                     />
                   </motion.div>
                 </div>
