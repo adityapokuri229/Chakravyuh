@@ -32,7 +32,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-          className="font-samarkan text-6xl sm:text-7xl md:text-8xl lg:text-9xl tracking-[0.05em] text-gradient mb-3 py-4 px-2 leading-[1.15] drop-shadow-[0_0_15px_rgba(201,168,76,0.3)]"
+          className="font-samarkan text-4xl sm:text-6xl md:text-8xl lg:text-9xl tracking-[0.05em] text-gradient mb-3 py-4 px-2 leading-[1.15] drop-shadow-[0_0_15px_rgba(201,168,76,0.3)]"
           style={{ fontStyle: 'normal', fontVariant: 'normal', fontWeight: 400 }}
         >
           CHAKRAVYUH
@@ -55,7 +55,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-          className="font-heading-alt text-lg md:text-2xl text-gold-pale tracking-[0.3em] mb-8 uppercase"
+          className="font-heading-alt text-base sm:text-lg md:text-2xl text-gold-pale tracking-[0.3em] mb-8 uppercase"
         >
           Devise &amp; Dominate
         </motion.p>
@@ -65,12 +65,12 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1, ease: [0.25, 0.1, 0.25, 1] }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-5 w-full"
+          className="flex flex-row items-center justify-center gap-3 sm:gap-5 w-full flex-wrap"
         >
-          <Link href="/registration" className="btn-gold w-full sm:w-auto px-12 py-4 text-xs">
+          <a href="https://docs.google.com/forms/d/1TPUvIxxkDbZULHmbX9g72leO92AL6Ti-s4Sx0aVBfWE/" target="_blank" rel="noopener noreferrer" className="btn-gold w-auto px-6 sm:px-12 py-3 sm:py-4 text-[10px] sm:text-xs">
             Register Now
-          </Link>
-          <Link href="/events" className="btn-gold-outline w-full sm:w-auto px-12 py-4 text-xs">
+          </a>
+          <Link href="/events" className="btn-gold-outline w-auto px-6 sm:px-12 py-3 sm:py-4 text-[10px] sm:text-xs">
             Explore Events
           </Link>
         </motion.div>

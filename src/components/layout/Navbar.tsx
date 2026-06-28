@@ -18,6 +18,7 @@ const navLinks = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
   const pathname = usePathname();
 
   useEffect(() => {
@@ -25,6 +26,35 @@ export default function Navbar() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: '-20% 0px -60% 0px' }
+    );
+
+    const sections = document.querySelectorAll('section[id]');
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, [pathname]);
+
+  const isActive = (href: string) => {
+    if (href.startsWith('/#')) {
+      const targetId = href.replace('/#', '');
+      return activeSection === targetId;
+    }
+    if (href === '/') {
+      return pathname === '/' && (!activeSection || activeSection === 'home');
+    }
+    return pathname === href;
+  };
 
   useEffect(() => {
     setMobileOpen(false);
@@ -74,13 +104,13 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   className={`relative px-3.5 py-2 text-sm font-normal tracking-wide transition-all duration-300 rounded-lg ${
-                    pathname === link.href
+                    isActive(link.href)
                       ? 'text-secondary'
                       : 'text-white/60 hover:text-white'
                   }`}
                 >
                   {link.label}
-                  {pathname === link.href && (
+                  {isActive(link.href) && (
                     <motion.div
                       layoutId="navActive"
                       className="absolute -bottom-0.5 left-3 right-3 h-0.5 bg-secondary/60 rounded-full"
@@ -88,12 +118,14 @@ export default function Navbar() {
                   )}
                 </Link>
               ))}
-              <Link
-                href="/registration"
+              <a
+                href="https://docs.google.com/forms/d/1TPUvIxxkDbZULHmbX9g72leO92AL6Ti-s4Sx0aVBfWE/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="ml-4 px-5 py-2.5 bg-secondary text-background text-sm font-semibold rounded-lg hover:bg-secondary/90 transition-all duration-300 shadow-lg shadow-secondary/20"
               >
                 Register
-              </Link>
+              </a>
             </div>
 
             {/* Mobile button */}
@@ -123,7 +155,7 @@ export default function Navbar() {
                     key={link.href}
                     href={link.href}
                     className={`block px-4 py-3 rounded-lg text-sm tracking-wide transition-all duration-300 ${
-                      pathname === link.href
+                      isActive(link.href)
                         ? 'text-secondary bg-secondary/8'
                         : 'text-white/60 hover:text-white hover:bg-white/5'
                     }`}
@@ -131,12 +163,14 @@ export default function Navbar() {
                     {link.label}
                   </Link>
                 ))}
-                <Link
-                  href="/registration"
+                <a
+                  href="https://docs.google.com/forms/d/1TPUvIxxkDbZULHmbX9g72leO92AL6Ti-s4Sx0aVBfWE/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="block px-4 py-3 bg-secondary text-background font-semibold text-center text-sm rounded-lg mt-4"
                 >
                   Register Now
-                </Link>
+                </a>
               </div>
             </motion.div>
           )}
