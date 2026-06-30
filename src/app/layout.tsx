@@ -35,8 +35,8 @@ export const metadata: Metadata = {
     "Chakravyuh is an entanglement of passages — a labyrinth of strategy, power, and prestige. Step into the arena where only the sharpest minds prevail.",
   keywords: ["Chakravyuh", "school event", "competition", "strategy", "labyrinth"],
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
+    icon: "/logo.png",
+    shortcut: "/logo.png",
     apple: "/logo.png",
   },
 };
