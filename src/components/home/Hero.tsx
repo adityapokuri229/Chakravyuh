@@ -73,7 +73,7 @@ export default function Hero() {
           <Link href="/events" className="btn-gold-outline w-auto px-6 sm:px-12 py-3 sm:py-4 text-[10px] sm:text-xs">
             Explore Events
           </Link>
-          <a href="/brochure.pdf" target="_blank" rel="noopener noreferrer" className="btn-gold-outline w-auto px-6 sm:px-12 py-3 sm:py-4 text-[10px] sm:text-xs">
+          <a href="https://drive.google.com/file/d/1Sb49M2CQfunStU_wpQtRp_rQddfsCLlH/view" target="_blank" rel="noopener noreferrer" className="btn-gold-outline w-auto px-6 sm:px-12 py-3 sm:py-4 text-[10px] sm:text-xs">
             Brochure
           </a>
         </motion.div>
