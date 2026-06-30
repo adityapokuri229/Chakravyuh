@@ -109,14 +109,12 @@ export default function Navbar() {
                   )}
                 </Link>
               ))}
-              <a
-                href="https://forms.gle/dzUscRHoR6fqNJrw6"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/registration"
                 className="ml-4 px-5 py-2.5 bg-secondary text-background text-sm font-semibold rounded-lg hover:bg-secondary/90 transition-all duration-300 shadow-lg shadow-secondary/20"
               >
                 Register
-              </a>
+              </Link>
             </div>
 
             {/* Mobile button */}
@@ -154,14 +152,12 @@ export default function Navbar() {
                     {link.label}
                   </Link>
                 ))}
-                <a
-                  href="https://forms.gle/dzUscRHoR6fqNJrw6"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="/registration"
                   className="block px-4 py-3 bg-secondary text-background font-semibold text-center text-sm rounded-lg mt-4"
                 >
                   Register Now
-                </a>
+                </Link>
               </div>
             </motion.div>
           )}

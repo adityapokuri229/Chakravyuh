@@ -67,9 +67,9 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 1, ease: [0.25, 0.1, 0.25, 1] }}
           className="flex flex-row items-center justify-center gap-3 sm:gap-5 w-full flex-wrap"
         >
-          <a href="https://forms.gle/dzUscRHoR6fqNJrw6" target="_blank" rel="noopener noreferrer" className="btn-gold w-auto px-6 sm:px-12 py-3 sm:py-4 text-[10px] sm:text-xs">
+          <Link href="/registration" className="btn-gold w-auto px-6 sm:px-12 py-3 sm:py-4 text-[10px] sm:text-xs">
             Register Now
-          </a>
+          </Link>
           <Link href="/events" className="btn-gold-outline w-auto px-6 sm:px-12 py-3 sm:py-4 text-[10px] sm:text-xs">
             Explore Events
           </Link>
