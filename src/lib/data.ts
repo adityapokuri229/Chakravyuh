@@ -42,10 +42,10 @@ export const siteConfig = {
   name: 'Chakravyuh',
   tagline: 'Devise & Dominate',
   date: '2 July 2026',
-  email: 'chakravyuh@school.edu',
+  email: 'chakravyuhdpse@gmail.com',
   instagram: '@chakravyuh',
   whatsapp: '+91XXXXXXXXXX',
-  address: 'School Auditorium, Main Campus',
+  address: 'DPS Bangalore East',
   stats: {
     events: 5,
     participants: 300,

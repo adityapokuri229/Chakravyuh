@@ -1,10 +1,8 @@
 'use client';
 
 import AnimatedSection from '@/components/ui/AnimatedSection';
-import CountUp from '@/components/ui/CountUp';
 import GoldCorner from '@/components/ui/GoldCorner';
 import OrnateDivider from '@/components/ui/OrnateDivider';
-import { siteConfig } from '@/lib/data';
 import { motion } from 'framer-motion';
 
 export default function About() {
@@ -117,22 +115,6 @@ export default function About() {
           </AnimatedSection>
         </div>
 
-        {/* Stats card with Ornate grid */}
-        <AnimatedSection className="mt-16 md:mt-24">
-          <div className="relative tamrapatra-card rounded-2xl p-8 md:p-12 border border-secondary/25 overflow-hidden">
-            <GoldCorner />
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 relative z-10">
-              <CountUp end={siteConfig.stats.events} label="Royal Arenas" />
-              <CountUp end={siteConfig.stats.participants} suffix="+" label="Warriors Joined" />
-              <CountUp end={siteConfig.stats.schools} suffix="+" label="Clans Competing" />
-              <CountUp end={siteConfig.stats.finale} label="Grand Showdown" />
-            </div>
-            
-            {/* Background design accents */}
-            <div className="absolute -bottom-10 -right-10 w-40 h-40 border border-secondary/10 rounded-full opacity-30 pointer-events-none" />
-            <div className="absolute -top-10 -left-10 w-40 h-40 border border-secondary/10 rounded-full opacity-30 pointer-events-none" />
-          </div>
-        </AnimatedSection>
       </div>
     </section>
   );

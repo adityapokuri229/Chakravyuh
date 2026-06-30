@@ -81,18 +81,11 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3 group">
-              <div className="relative">
-                <div className="w-9 h-9 md:w-10 md:h-10 rounded-full overflow-hidden ring-2 ring-secondary/50 shadow-lg shadow-secondary/15 group-hover:ring-secondary transition-all duration-300">
-                  <img
-                    src="/logo.png"
-                    alt="Chakravyuh"
-                    className="w-full h-full object-cover relative -top-[2px] scale-105"
-                  />
-                </div>
-              </div>
-              <span className="font-heading text-base md:text-lg tracking-[0.06em] text-white/90 group-hover:text-secondary transition-colors duration-300 hidden sm:block">
-                CHAKRAVYUH
-              </span>
+              <img
+                src="/dps-logo.png"
+                alt="DPS Bangalore East"
+                className="w-16 h-16 md:w-20 md:h-20 object-contain"
+              />
             </Link>
 
             {/* Desktop nav */}

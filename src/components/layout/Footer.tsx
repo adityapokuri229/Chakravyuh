@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Camera, Mail, MapPin, Phone } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import OrnateDivider from '../ui/OrnateDivider';
 
 export default function Footer() {
@@ -25,7 +25,7 @@ export default function Footer() {
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16 z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
           {/* Brand Col */}
           <div>
             <div className="flex items-center gap-2.5 mb-4">
@@ -74,44 +74,12 @@ export default function Footer() {
             </h3>
             <ul className="space-y-3">
               <li className="flex items-center gap-2.5 text-white/70 text-sm font-body-alt">
-                <MapPin size={14} className="text-secondary shrink-0" />
-                School Auditorium, Main Campus
-              </li>
-              <li className="flex items-center gap-2.5 text-white/70 text-sm font-body-alt">
                 <Mail size={14} className="text-secondary shrink-0" />
-                chakravyuh@school.edu
-              </li>
-              <li className="flex items-center gap-2.5 text-white/70 text-sm font-body-alt">
-                <Phone size={14} className="text-secondary shrink-0" />
-                +91 XXXXXXXXXX
-              </li>
-              <li className="flex items-center gap-2.5 text-white/70 text-sm font-body-alt">
-                <Camera size={14} className="text-secondary shrink-0" />
-                @chakravyuh
+                <a href="mailto:chakravyuhdpse@gmail.com" className="hover:text-secondary transition-colors">chakravyuhdpse@gmail.com</a>
               </li>
             </ul>
           </div>
 
-          {/* Socials Col */}
-          <div>
-            <h3 className="font-heading text-white text-sm uppercase tracking-wider mb-4 border-b border-secondary/20 pb-2">
-              Clan Scrolls
-            </h3>
-            <p className="text-white/60 text-sm mb-4 font-body-alt">
-              Stay updated with the latest news and announcements.
-            </p>
-            <div className="flex gap-3">
-              {['Instagram', 'WhatsApp', 'Email'].map((platform) => (
-                <span
-                  key={platform}
-                  className="w-10 h-10 rounded-full bg-primary/20 border-2 border-secondary/35 flex items-center justify-center text-secondary hover:text-white hover:border-secondary transition-all cursor-pointer text-xs font-bold shadow-md shadow-primary/20 select-none"
-                  title={platform}
-                >
-                  {platform.charAt(0)}
-                </span>
-              ))}
-            </div>
-          </div>
         </div>
 
         <OrnateDivider className="!my-8 opacity-45" />
