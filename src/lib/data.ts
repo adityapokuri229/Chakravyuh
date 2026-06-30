@@ -391,11 +391,11 @@ export const faqs: FAQItem[] = [
   },
   {
     question: 'Can spectators attend?',
-    answer: 'Yes, spectators are welcome. However, only registered participants will be allowed in competition areas during active rounds.',
+    answer: 'Only registered participants will be allowed in competition areas during active rounds.',
   },
   {
     question: 'What is the dress code?',
-    answer: 'Formal or smart casual attire is recommended. Participants in Tribunal are requested to wear formal attire.',
+    answer: 'School uniform is mandatory for all participants.',
   },
 ];
 
